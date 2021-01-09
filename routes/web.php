@@ -57,4 +57,10 @@ Route::group(['prefix'=>'admin'], function(){
 
 });
 
+Route::get('trangchu', ['as' => 'index', 'uses' => 'PageController@getIndex']);
+Route::get('loai-san-pham', ['as' => 'typeproduct', 'uses' => 'PageController@getTypeProduct']);
+Route::get('chi-tiet-san-pham', ['as' => 'detailproduct', 'uses' => 'PageController@getDetailProduct']);
+Route::get('lien-he', ['as' => 'contact', 'uses' => 'PageController@getContact']);
+Route::get('gioi-thieu', ['as' => 'about', 'uses' => 'PageController@getAbout']);
+
 
