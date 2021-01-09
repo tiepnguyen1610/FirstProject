@@ -42,13 +42,12 @@ class SildesController extends Controller
 			$uploadPath = public_path('/uploads');
     	}
 
-    	$slide->name 	=$request->txtSlideName;
-    	$slide->image 	=$fileName;
+    	$slide->name = $request->txtSlideName;
+    	$slide->image = $fileName;
     	$slide->save();
     	$file->move($uploadPath,$fileName);
 
-    	return redirect()->route('admin.slide.index')
-    		->with([
+    	return redirect()->back()->with([
     			'flash_level' => 'success',
     			'flash_message' => 'Thêm mới thành công'
     		]);
@@ -60,7 +59,7 @@ class SildesController extends Controller
      */
     public function edit()
     {
-
+        return view('admin.slide.edit');
     }
 
     /**

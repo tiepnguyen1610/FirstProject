@@ -38,7 +38,7 @@ class ProductRequest extends FormRequest
             'slrCategory.required' => 'Vui lòng chọn danh mục!',
             'txtProName.required'  => 'Vui lòng nhập tên sản phẩm!',
             'txtUnitPrice.required'=> 'Giá tiền chưa được nhập!',
-            'fImage.required'      => 'Vui lòng chọn ảnh.' ,
+            'fImage.required'      => 'Vui lòng chọn ảnh cho sản phẩm', 
             'fImage.image'         => 'File không đúng định dạng', 
             'fImage.max'           => 'File kích thước vượt quá cho phép' 
         ];

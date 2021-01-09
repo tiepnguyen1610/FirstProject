@@ -8,17 +8,6 @@ class CategoryRepository
 {
 
 	/**
-	 *  Creat data
-	 */
-	public static function create(array $data = [])
-	{
-		if(!count($data)){
-			return;
-		}
-		return Category::create($data);
-	}
-
-	/**
 	 *  Get List Data
 	 */
 	public static function list(array $fields = [])
@@ -29,6 +18,17 @@ class CategoryRepository
 			$categories->select($fields);
 		}
 		return $categories->get();
+	}
+	
+	/**
+	 *  Creat data
+	 */
+	public static function create(array $data = [])
+	{
+		if(!count($data)){
+			return;
+		}
+		return Category::create($data);
 	}
 
 	/**

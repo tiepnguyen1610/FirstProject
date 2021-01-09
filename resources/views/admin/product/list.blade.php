@@ -23,11 +23,11 @@
                     <td>{!! $product->category->name !!}</td>
                     <td>{!! number_format($product->unitprice,0,",",".") !!}₫</td>
                     <td>
-                        <img width="40px" height="40px" src="{{ asset('storage/app') . '/' . $product->image }}" alt="">
+                        <img width="60px" height="40px" src="{{ asset('public/uploads/images/'.$product['image']) }}" alt="">
                     </td>
                     <td>{!! $product->created_at->diffForHumans() !!}</td>
                     <td class="center">
-                        <a class="btn btn-success btn-sm" href="">Chỉnh Sửa</a>
+                        <a class="btn btn-success btn-sm" href="{{ route('admin.product.edit', $product->id) }}">Chỉnh Sửa</a>
                     </td>
                     <td class="center">
                         <form action="{{ route('admin.product.destroy',$product->id) }}" method="GET">

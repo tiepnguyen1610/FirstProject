@@ -3,10 +3,25 @@
 namespace App\Repositories;
 
 use App\Product;
-use Illuminate\Support\Facades\Storage;
+use File;
 
 class ProductRepository
 {
+
+	/**
+	 * Show data on the database out of the form
+	 */
+	public static function list(array $fields = [])
+	{
+		$products = Product::orderBy('id', 'DESC')
+            ->with('category');
+
+        if(count($fields)){
+        	$products->select($fields);
+        }
+        return $products->get();
+	}
+
 	/**
 	 *  Creating new data
 	 */
@@ -25,36 +40,36 @@ class ProductRepository
 	}
 
 	/**
-	 * Show data on the database out of the form
+	 * 
 	 */
-	public static function list(array $fields = [])
+	public static function update(array $data = [], $id)
 	{
-		$products = Product::orderBy('id', 'DESC')
-            ->with('category');
-
-        if(count($fields)){
-        	$products->select($fields);
+		if (!count($data)) {
+            return;
         }
-        return $products->get();
+
+        $product = Product::findOrFail($id);
+
+        return $product->update($data);
 	}
 
 	/**
-	 * 
+	 *  Find Id
 	 */
-	public static function update()
+	public static function find($id)
 	{
-
+		$product = Product::where('id',$id);
+		return $product->firstOrFail();
 	}
 
 	/**
 	 * Tìm đến id cần xoá
-	 * Thực hiện xoá file image trong storage
 	 * Xoá toàn bộ dữ liệu trên database
 	 */
 	public static function destroy($id)
 	{
 		$product = Product::findOrFail($id);
-		Storage::delete($product->image);
+		File::delete('public/uploads/images/'.$product->image);
 		return $product->delete();
 	}
 

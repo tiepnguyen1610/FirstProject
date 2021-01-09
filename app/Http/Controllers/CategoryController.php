@@ -39,8 +39,7 @@ class CategoryController extends Controller
     
     	$category = CategoryRepository::create($data);
 
-    	return redirect()->route('admin.category.index')
-    		->with([
+    	return redirect()->back()->with([
                 'flash_level'=>'success',
                 'flash_message' => 'Thêm mới thành công'
             ]);
