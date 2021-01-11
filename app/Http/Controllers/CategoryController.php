@@ -8,12 +8,13 @@ use App\Http\Requests\Cate\CateRequest;
 
 class CategoryController extends Controller
 {
-
+    
+    /**
+     * List all category
+     */
 	public function index()
     {
-    	/**
-    	 * Lấy dữ liệu từ database đổ ra danh sách danh mục sản phẩm
-    	 */
+    	
     	$data = CategoryRepository::list(['id', 'name', 'description']);
     	return view('admin.category.list',compact('data'));
     }
@@ -28,8 +29,8 @@ class CategoryController extends Controller
     }
 
     /**
-     * Thực hiện Validate và thêm mới data vào database
-     * Điều hướng đến danh sách danh mục
+     * Validate data
+     * creates a category
      */
     public function store(CateRequest $request)
     {
@@ -45,20 +46,21 @@ class CategoryController extends Controller
             ]);
     }
 
+    /**
+     * Get's id category
+     * @param
+     */
     public function edit($id)
     {
-    	// Lấy ra id danh mục cần chỉnh sửa
     	$category = CategoryRepository::find($id);
     	return view('admin.category.edit', compact('category'));
     }
 
     /**
-     *  Cập nhật lại dữ liệu của id và lưu vào database
+     *  Updates a category
      * @param  Request $request 
-     * @param  [type]  $id      
-     * @return Điều hướng về danh sách danh mục
      */
-    public function update(Request $request, $id)
+    public function update(CateRequest $request, $id)
     {
     	$data = [];
     	$data['name']		 = $request->txtCatName;
@@ -73,12 +75,12 @@ class CategoryController extends Controller
             ]);
     }
 
+    /**
+     * Deletes a category
+     */
     public function destroy($id)
     {
-    	/**
-    	 * Tìm kiếm id danh mục cần xoá và thực hiện xoá danh mục
-    	 * Điều hướng về danh sách
-    	 */
+    	
     	$category = CategoryRepository::destroy($id);
 
     	return redirect()->route('admin.category.index')

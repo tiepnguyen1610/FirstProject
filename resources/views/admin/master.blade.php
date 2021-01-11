@@ -153,7 +153,6 @@
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
-
                     <!-- Message -->
                     <div class="col-lg-12">
                         @if(Session()->has('flash_message')) 

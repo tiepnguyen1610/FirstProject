@@ -11,7 +11,7 @@ use File;
 class ProductController extends Controller
 {
     /**
-     *  Show ra danh sách sản phẩm
+     *  List all product
      */
     public function index()
     {
@@ -22,7 +22,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Hiển thị form nhập dữ liệu để thêm dữ liệu vào database
+     * Show form add product
      */
     public function create()
     {
@@ -31,8 +31,8 @@ class ProductController extends Controller
     }
 
     /**
-     * Validate dữ liệu và lưu vào database
-     * Điều hướng về trang danh sách sản phẩm
+     * Validate data
+     * creates a product
      */
     public function store(ProductRequest $request)
     {
@@ -63,7 +63,7 @@ class ProductController extends Controller
     }
     
     /**
-     * Lấy ra id sản phẩm cần update trả về form edit
+     * Get's id product
      * Get id name category
      */
     public function edit($id)
@@ -74,21 +74,25 @@ class ProductController extends Controller
     }
 
     /**
-     * 
+     *  Updates a product
      */
     public function update(ProductRequest $request, $id)
     {
 
         if($request->hasFile('fImage')){
 
-            $imageProduct = ProductRepository::find($id);
-            if($imageProduct->image){
-                File::delete('/public/uploads/images/'.$imageProduct->image);
-            }
+            //$imageProduct = ProductRepository::find($id);
+            //if($imageProduct->image){
+                //File::delete('/public/uploads/images/'.$imageProduct->image);
+            //}
             $file =$request->fImage;
             $fileName = $file->getClientOriginalName();
             // Thư mục upload image product
             $uploadPath = public_path('/uploads/images');
+            $file->move($uploadPath,$fileName);
+
+        }else{
+            unset($request->fImage);
         }
 
         $data = [];
@@ -98,7 +102,6 @@ class ProductController extends Controller
         $data['promotionprice'] = $request->txtProPrice;
         $data['description']    = $request->txtDescription;
         $data['image']          = $fileName;
-        $file->move($uploadPath,$fileName);
 
         $product = ProductRepository::update($data, $id);
         return redirect()->route('admin.product.index')
@@ -109,7 +112,7 @@ class ProductController extends Controller
     }
 
     /**
-     * 
+     *  Deletes a product
      */
     public function destroy($id)
     {

@@ -16,9 +16,12 @@
         </tr>
     </thead>
         <tbody>
+            @php
+                $i = 1;
+            @endphp
             @foreach($products as $product)
                 <tr class="odd gradeX" align="center">
-                    <td>{{ $product->id }}</td>
+                    <td>{{ $i++ }}</td>
                     <td>{!! $product->name !!}</td>
                     <td>{!! $product->category->name !!}</td>
                     <td>{!! number_format($product->unitprice,0,",",".") !!}₫</td>

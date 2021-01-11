@@ -13,9 +13,12 @@
         </tr>
     </thead>
     <tbody>
+        @php
+            $i = 1;
+        @endphp
         @foreach($data as $item)
             <tr class="even gradeC" align="center">
-                <td>{{ $item['id'] }}</td>
+                <td>{{ $i++ }}</td>
                 <td>{!! $item['name'] !!}</td>
                 <td>
                     <img src="{{ asset('public/uploads/'.$item['image']) }}" width="100px" height="80px" alt="fwfgwuy">

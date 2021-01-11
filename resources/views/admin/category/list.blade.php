@@ -13,9 +13,12 @@
         </tr>
     </thead>
     <tbody>
+        @php
+            $i = 1;
+        @endphp
         @foreach($data as $item)
             <tr class="even gradeC" align="center">
-                <td>{{ $item->id }}</td>
+                <td>{{ $i++ }}</td>
                 <td>{!! $item->name !!}</td>
                 <td>{!! $item->description !!}</td>
                 <td class="center">
