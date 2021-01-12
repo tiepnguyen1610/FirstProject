@@ -8,7 +8,7 @@ class CategoryRepository
 {
 
 	/**
-	 *  Get List Data
+	 *  Get's all category by it's ID
 	 */
 	public static function list(array $fields = [])
 	{
@@ -21,7 +21,7 @@ class CategoryRepository
 	}
 	
 	/**
-	 *  Creat data
+	 *  Created new category
 	 */
 	public static function create(array $data = [])
 	{
@@ -31,8 +31,7 @@ class CategoryRepository
 		return Category::create($data);
 	}
 
-	/**
-	 *  Find ID
+	/**Get's a category by it's ID
 	 */
 	public static function find($id)
 	{
@@ -41,7 +40,7 @@ class CategoryRepository
 	}
 
 	/**
-	 *  Update Data
+	 *  Updated a category
 	 */
 	public static function update(array $data = [], $id)
 	{
@@ -53,7 +52,7 @@ class CategoryRepository
 	}
 
 	/**
-	 *  Destroy Id Data
+	 *  Deleted a category
 	 */
 	public static function destroy($id)
 	{

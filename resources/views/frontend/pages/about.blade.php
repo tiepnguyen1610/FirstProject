@@ -3,11 +3,11 @@
 	<div class="inner-header">
 			<div class="container">
 				<div class="pull-left">
-					<h6 class="inner-title">Giới thiệu</h6>
+					<h6 class="inner-title">Giới Thiệu</h6>
 				</div>
 				<div class="pull-right">
 					<div class="beta-breadcrumb font-large">
-						<a href="index.html">Home</a> / <span>Giới thiệu</span>
+						<a href="{{ route('index') }}">Trang Chủ</a> / <span>Giới thiệu</span>
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -16,7 +16,7 @@
 	<div class="container">
 			<div id="content">
 				<div class="our-history">
-					<h2 class="text-center wow fadeInDown">Our History</h2>
+					<h2 class="text-center wow fadeInDown">Lịch Sử Của Chúng Tôi</h2>
 					<div class="space35">&nbsp;</div>
 
 					<div class="history-slider">

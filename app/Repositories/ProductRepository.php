@@ -9,11 +9,11 @@ class ProductRepository
 {
 
 	/**
-	 * Show data on the database out of the form
+	 * Get's all product by it's ID
 	 */
 	public static function list(array $fields = [])
 	{
-		$products = Product::orderBy('id', 'DESC')
+		$products = Product::orderBy('id', 'ASC')
             ->with('category');
 
         if(count($fields)){
@@ -40,7 +40,7 @@ class ProductRepository
 	}
 
 	/**
-	 * 
+	 * Updated a product
 	 */
 	public static function update(array $data = [], $id)
 	{
@@ -54,7 +54,7 @@ class ProductRepository
 	}
 
 	/**
-	 *  Find Id
+	 *  Get's a product by it's ID
 	 */
 	public static function find($id)
 	{
@@ -63,8 +63,7 @@ class ProductRepository
 	}
 
 	/**
-	 * Tìm đến id cần xoá
-	 * Xoá toàn bộ dữ liệu trên database
+	 * Deleted a product
 	 */
 	public static function destroy($id)
 	{

@@ -3,11 +3,11 @@
 	<div class="inner-header">
 			<div class="container">
 				<div class="pull-left">
-					<h6 class="inner-title">Contacts</h6>
+					<h6 class="inner-title">Liên Hệ</h6>
 				</div>
 				<div class="pull-right">
 					<div class="beta-breadcrumb font-large">
-						<a href="index.html">Home</a> / <span>Contacts</span>
+						<a href="{{route('index')}}">Trang Chủ</a> / <span>Liên Hệ</span>
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -23,9 +23,9 @@
 				<div class="space50">&nbsp;</div>
 				<div class="row">
 					<div class="col-sm-8">
-						<h2>Contact Form</h2>
+						<h2>Liên Hệ</h2>
 						<div class="space20">&nbsp;</div>
-						<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit ani m id est laborum.</p>
+						{{-- <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit ani m id est laborum.</p> --}}
 						<div class="space20">&nbsp;</div>
 						<form action="#" method="post" class="contact-form">	
 							<div class="form-block">
@@ -46,10 +46,10 @@
 						</form>
 					</div>
 					<div class="col-sm-4">
-						<h2>Contact Information</h2>
+						<h2>Thông Tin Liên Hệ</h2>
 						<div class="space20">&nbsp;</div>
 
-						<h6 class="contact-title">Address</h6>
+						<h6 class="contact-title">Địa Chỉ</h6>
 						<p>
 							Suite 127 / 267 – 277 Brussel St,<br>
 							62 Croydon, NYC <br>

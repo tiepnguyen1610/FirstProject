@@ -70,7 +70,7 @@ font-weight:300;
 
 div,form,fieldset,legend,label {
 margin:0;
-padding:0
+padding:0;
 }
 
 form {
@@ -1517,7 +1517,9 @@ margin-left:20px
 .wc-select {
 width:90px;
 height:35px;
-margin-right:10px
+margin-right:10px;
+text-align: center;
+font-size: 16px;
 }
 
 .beta-dropdown {
@@ -1881,7 +1883,7 @@ margin-bottom:5px
 }
 
 .single-item-price {
-font-size:20px;
+font-size:16px;
 color:#000
 }
 
@@ -5202,3 +5204,29 @@ border:none;}
 .beta-rotator canvas{width:100%;}
 .beta-rotator {font-family: "Open Sans",sans-serif;}
 .history-slider span {font-family: "Open Sans",sans-serif;}
+
+
+/**
+ *  Pagination
+ */
+/*.pagination {
+  width: 400px;
+  margin-left: 50px;
+}*/
+.pagination a {
+  display: block;
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+ 
+.pagination a.active {
+    background-color: #3a5c83;
+    color: white;
+}
+ 
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
