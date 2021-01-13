@@ -34,5 +34,9 @@ class Product extends Model
     	return $this->belongsTo('App\Category','cat_id');
     }
 
+    public function bill_detail()
+    {
+        return $this->hasMany('App\BillDetail');
+    }
    
 }
