@@ -63,6 +63,8 @@ Route::get('loai-san-pham/{catid}', ['as' => 'typeproduct', 'uses' => 'PageContr
 Route::get('chi-tiet-san-pham/{id}', ['as' => 'detailproduct', 'uses' => 'PageController@getDetailProduct']);
 Route::get('lien-he', ['as' => 'contact', 'uses' => 'PageController@getContact']);
 Route::get('gioi-thieu', ['as' => 'about', 'uses' => 'PageController@getAbout']);
+Route::get('dat-hang', ['as' => 'getCheckout', 'uses' => 'PageController@getCheckout']);
+Route::post('dat-hang', ['as' => 'postCheckout', 'uses' => 'PageController@postCheckout']);
 
 Route::group(['prefix' => 'cart'], function(){
 	Route::get('index', ['as' => 'cart.index', 'uses' => 'CartController@index']);
