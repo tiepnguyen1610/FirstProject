@@ -4,14 +4,14 @@
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
 						<li><a href=""><i class="fa fa-home"></i> 90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
-						<li><a href=""><i class="fa fa-phone"></i> 0163 296 7751</a></li>
+						<li><a href=""><i class="fa fa-phone"></i>0973521620</a></li>
 					</ul>
 				</div>
 				<div class="pull-right auto-width-right">
 					<ul class="top-details menu-beta l-inline">
 						<li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
-						<li><a href="#">Đăng kí</a></li>
-						<li><a href="#">Đăng nhập</a></li>
+						<li><a href="{{ route('getSignup') }}">Đăng kí</a></li>
+						<li><a href="{{ route('getLogin') }}">Đăng nhập</a></li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -33,43 +33,23 @@
 
 					<div class="beta-comp">
 						<div class="cart">
-							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng (Trống) <i class="fa fa-chevron-down"></i></div>
+							<div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng ({{ ($cart->totalQuantity)? $cart->totalQuantity : 'Trống' }})<i class="fa fa-chevron-down"></i>
+							</div>
 							<div class="beta-dropdown cart-body">
+								@foreach($cart->items as $item )
 								<div class="cart-item">
+									<a class="cart-item-delete" href="{{ route('cart.delete',$item['id']) }}"><i class="fa fa-times"></i></a>
 									<div class="media">
-										<a class="pull-left" href="#"><img src="public/user/images/products/cart/1.png" alt=""></a>
+										<a class="pull-left" href="#"><img src="{{ asset('public/uploads/images/'.$item['image']) }}" width="50px" height="50px" alt=""></a>
 										<div class="media-body">
-											<span class="cart-item-title">Sample Woman Top</span>
-											<span class="cart-item-options">Size: XS; Colar: Navy</span>
-											<span class="cart-item-amount">1*<span>$49.50</span></span>
+											<span class="cart-item-title">{{ $item['name'] }}</span>
+											<span class="cart-item-amount">{{ $item['quantity'] }}*<span>{{ number_format($item['price'],0,",",".").'₫' }}</span></span>
 										</div>
 									</div>
 								</div>
-
-								<div class="cart-item">
-									<div class="media">
-										<a class="pull-left" href="#"><img src="public/user/images/products/cart/2.png" alt=""></a>
-										<div class="media-body">
-											<span class="cart-item-title">Sample Woman Top</span>
-											<span class="cart-item-options">Size: XS; Colar: Navy</span>
-											<span class="cart-item-amount">1*<span>$49.50</span></span>
-										</div>
-									</div>
-								</div>
-
-								<div class="cart-item">
-									<div class="media">
-										<a class="pull-left" href="#"><img src="public/user/images/products/cart/3.png" alt=""></a>
-										<div class="media-body">
-											<span class="cart-item-title">Sample Woman Top</span>
-											<span class="cart-item-options">Size: XS; Colar: Navy</span>
-											<span class="cart-item-amount">1*<span>$49.50</span></span>
-										</div>
-									</div>
-								</div>
-
+								@endforeach
 								<div class="cart-caption">
-									<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">$34.55</span></div>
+									<div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">{{ number_format($cart->totalPrice,0,",",".").'₫'}}</span></div>
 									<div class="clearfix"></div>
 
 									<div class="center">
@@ -78,6 +58,7 @@
 									</div>
 								</div>
 							</div>
+														
 						</div> <!-- .cart -->
 					</div>
 				</div>

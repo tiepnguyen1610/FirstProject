@@ -14,7 +14,7 @@
 	<link rel="stylesheet" title="style" href="{{ asset('public/user/css/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('public/user/css/animate.css') }}">
 	<link rel="stylesheet" title="style" href="{{ asset('public/user/css/huong-style.css') }}">
-</head>
+	<script type="text/javascript" src="{{ asset('public/user/js/jquery.js') }}"></script>
 <body>
 
 	@include('frontend.layout.header')
@@ -29,7 +29,7 @@
 
 
 	<!-- include js files -->
-	<script src="{{ asset('public/user/js/jquery.js') }}"></script>
+	
 	<script src="{{ asset('public/user/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js') }}"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 	<script src="{{ asset('public/user/vendors/bxslider/jquery.bxslider.min.js') }}"></script>
@@ -43,6 +43,7 @@
 	<script src="{{ asset('public/user/js/wow.min.js') }}"></script>
 	<!--customjs-->
 	<script src="{{ asset('public/user/js/custom2.js') }}"></script>
+	
 	<script>
 	$(document).ready(function($) {    
 		$(window).scroll(function(){
@@ -54,5 +55,6 @@
 		)
 	})
 	</script>
+	
 </body>
 </html>

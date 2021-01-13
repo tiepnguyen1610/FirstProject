@@ -47,7 +47,7 @@
 							<p>Số Lượng :</p>
 							<div class="single-item-options">
 								<input type="number" step="1" max="99" min="1" value="1" size="4" class="wc-select" name="color"/>
-								<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+								<a class="add-to-cart" id="addCart" href=""><i class="fa fa-shopping-cart"></i></a>
 								<div class="clearfix"></div>
 							</div>
 						</div>
@@ -98,7 +98,7 @@
 										</p>
 									</div>
 									<div class="single-item-caption">
-										<a class="add-to-cart pull-left" href="#"><i class="fa fa-shopping-cart"></i></a>
+										<a class="add-to-cart pull-left"  href="{{ route('cart.add',$product->id) }}"><i class="fa fa-shopping-cart"></i></a>
 										<a class="beta-btn primary" href="{{ route('detailproduct', $product->id) }}">Details <i class="fa fa-chevron-right"></i></a>
 										<div class="clearfix"></div>
 									</div>

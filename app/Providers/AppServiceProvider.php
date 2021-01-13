@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use App\Category;
+use App\Cart;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,7 +26,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $categories = Category::all();
-        View::share('categories', $categories);
+        view()->composer('frontend.layout.header', function($view){
+            $categories = Category::all();
+            $cart = new Cart();
+            $view->with([
+                'categories' => $categories,
+                'cart' => $cart
+            ]);
+        });
     }
 }
