@@ -13,18 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.master');
-    //return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('test', function () {
-    return view('admin.category.edit');
-});
+Route::get('trang-chu', 'PageController@getIndex')->name('index');
+Route::get('loai-san-pham/{catid}', ['as' => 'typeproduct', 'uses' => 'PageController@getTypeProduct']);
+Route::get('chi-tiet-san-pham/{id}', ['as' => 'detailproduct', 'uses' => 'PageController@getDetailProduct']);
+Route::get('lien-he', ['as' => 'contact', 'uses' => 'PageController@getContact']);
+Route::get('gioi-thieu', ['as' => 'about', 'uses' => 'PageController@getAbout']);
 
 Route::group(['prefix'=>'admin'], function(){
 
@@ -58,23 +53,12 @@ Route::group(['prefix'=>'admin'], function(){
 
 });
 
-Route::get('trang-chu', ['as' => 'index', 'uses' => 'PageController@getIndex']);
-Route::get('loai-san-pham/{catid}', ['as' => 'typeproduct', 'uses' => 'PageController@getTypeProduct']);
-Route::get('chi-tiet-san-pham/{id}', ['as' => 'detailproduct', 'uses' => 'PageController@getDetailProduct']);
-Route::get('lien-he', ['as' => 'contact', 'uses' => 'PageController@getContact']);
-Route::get('gioi-thieu', ['as' => 'about', 'uses' => 'PageController@getAbout']);
-Route::get('dat-hang', ['as' => 'getCheckout', 'uses' => 'PageController@getCheckout']);
-Route::post('dat-hang', ['as' => 'postCheckout', 'uses' => 'PageController@postCheckout']);
-
 Route::group(['prefix' => 'cart'], function(){
 	Route::get('index', ['as' => 'cart.index', 'uses' => 'CartController@index']);
 	Route::get('add/{id}', ['as' => 'cart.add', 'uses' => 'CartController@add']);
 	Route::get('delete/{id}', ['as' => 'cart.delete', 'uses' => 'CartController@delete']);
 });
 
-Route::get('dang-ky', ['as' => 'getSignup', 'uses' => 'UserController@getSignup']);
-Route::post('dang-ky', ['as' => 'postSignup', 'uses' => 'UserController@postSignup']);
-Route::get('dang-nhap', ['as' => 'getLogin', 'uses' => 'UserController@getLogin']);
-Route::post('dang-nhap', ['as' => 'postLogin', 'uses' => 'UserController@postLogin']);
-
+Route::get('dat-hang', ['as' => 'getCheckout', 'uses' => 'CheckoutController@getCheckout']);
+Route::post('dat-hang', ['as' => 'postCheckout', 'uses' => 'CheckoutController@postCheckout']);
 

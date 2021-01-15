@@ -61,11 +61,11 @@ height:100%;
 }
 
 body {
-font:13px/20px "Open Sans",sans-serif;
+font:14px/20px "Times New Roman",sans-serif;
 color:black;
 background:#fff;
 font-weight:300;
-
+font-weight:bold;
 }
 
 div,form,fieldset,legend,label {
@@ -117,7 +117,7 @@ outline:none
 }
 
 h1,h2,h3,h4,h5,h6,td,caption {
-font-weight:400
+font-weight:400;
 }
 
 th,td {
@@ -719,7 +719,6 @@ h2,.h2 {
 color:#253951;
 font-size:2.78231em;
 line-height:39.78px;
-font-family:"Open Sans",sans-serif;
 font-weight:300;
 margin-top:0
 }
@@ -737,7 +736,7 @@ h4,.h4 {
 color:#253951;
 font-size:2.30769em;
 line-height:39.78px;
-font-family:"Open Sans",sans-serif;
+font-family:"Times New Roman",sans-serif;
 font-weight:300;
 margin-top:0
 }
@@ -746,7 +745,7 @@ h5,.h5 {
 color:#253951;
 font-size:1.92308em;
 line-height:39.78px;
-font-family:"Open Sans",sans-serif;
+font-family:"Times New Roman",sans-serif;
 font-weight:400;
 margin-top:0
 }
@@ -798,7 +797,7 @@ strong {
 color:#000
 }
 
-input[type="text"],input[type="email"],input[type="url"],textarea {
+input[type="text"],input[type="password"],input[type="email"],input[type="url"],textarea {
 width:100%;
 border:1px solid #e1e1e1;
 height:37px;
@@ -814,39 +813,6 @@ padding:12px
 margin-bottom:10px
 }
 
-input[type="checkbox"] {
-display:none
-}
-
-input[type="checkbox"]+label {
-position:relative;
-padding-left:21px;
-width:100%
-}
-
-input[type="checkbox"]+label span:first-child {
-width:13px;
-height:13px;
-display:inline-block;
-margin-right:8px;
-border:1px solid #e1e1e1;
-position:absolute;
-left:0;
-bottom:3px
-}
-
-input[type="checkbox"]:checked+label {
-color:#000
-}
-
-input[type="checkbox"]:checked+label span:first-child:before {
-content:"\f00c";
-font-family:'FontAwesome';
-position:absolute;
-left:1px;
-top:-4px;
-font-size:10px
-}
 
 .beta-select {
 position:relative
@@ -971,7 +937,6 @@ float:left
 
 .form-block label {
 width:200px;
-font-weight:lighter
 }
 
 .form-block input,.form-block select,.beta-form-checkout textarea {
@@ -1159,7 +1124,7 @@ text-transform:uppercase
 }
 
 .main-menu a {
-font-family:"Open Sans",sans-serif;
+font-family:"Times New Roman",sans-serif;
 font-size:16px
 }
 
@@ -1277,12 +1242,14 @@ margin-bottom:50px
 }
 
 .aside .widget-title {
-font-size:16px;
-text-transform:uppercase;
-border:1px solid #e1e1e1;
-padding-left:20px;
-border-left:3px solid #606366;
-color:#606366
+font-size: 16px;
+text-transform: uppercase;
+border: 1px solid #e1e1e1;
+padding-left: 20px;
+border-left: 3px solid #606366;
+color: #606366;
+font-weight: bold;
+font-family: Times New Roman;
 }
 
 .aside ul li {
@@ -1511,7 +1478,9 @@ float:left
 }
 
 .single-item-options .add-to-cart {
-margin-left:20px
+width: 9rem;
+height: 3rem;
+line-height: 3rem;
 }
 
 .wc-select {
@@ -4267,7 +4236,8 @@ margin-left:5px
 .contact-title {
 line-height:100%;
 font-size:20px;
-color:#000
+color:#000;
+font-weight: bold;
 }
 
 .contact-form input {

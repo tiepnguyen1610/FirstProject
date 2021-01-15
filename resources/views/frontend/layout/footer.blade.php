@@ -52,10 +52,10 @@
 		<div class="container">
 			<p class="pull-left">Privacy policy. (&copy;) 2014</p>
 			<p class="pull-right pay-options">
-				<a href="#"><img src="public/user/images/pay/master.jpg" alt="" /></a>
-				<a href="#"><img src="public/user/images/pay/pay.jpg" alt="" /></a>
-				<a href="#"><img src="public/user/images/pay/visa.jpg" alt="" /></a>
-				<a href="#"><img src="public/user/images/pay/paypal.jpg" alt="" /></a>
+				<a href="#"><img src="{{asset('public/user/images/pay/master.jpg')}}" alt="" /></a>
+				<a href="#"><img src="{{asset('public/user/images/pay/pay.jpg')}}" alt="" /></a>
+				<a href="#"><img src="{{asset('public/user/images/pay/visa.jpg')}}" alt="" /></a>
+				<a href="#"><img src="{{asset('public/user/images/pay/paypal.jpg')}}" alt="" /></a>
 			</p>
 			<div class="clearfix"></div>
 		</div> <!-- .container -->

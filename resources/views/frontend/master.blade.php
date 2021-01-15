@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="{{ asset('public/user/css/animate.css') }}">
 	<link rel="stylesheet" title="style" href="{{ asset('public/user/css/huong-style.css') }}">
 	<script type="text/javascript" src="{{ asset('public/user/js/jquery.js') }}"></script>
+	{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --}}
 <body>
 
 	@include('frontend.layout.header')
@@ -55,6 +56,8 @@
 		)
 	})
 	</script>
-	
+	<script type="text/javascript">
+		$("div.alert").delay(3000).slideUp();
+	</script>
 </body>
 </html>

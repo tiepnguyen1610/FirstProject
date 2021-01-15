@@ -26,13 +26,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('frontend.layout.header', function($view){
+        view()->composer('*', function($view){
+            
             $categories = Category::all();
+            $view->with('categories',$categories);
+        });
+        view()->composer('frontend.layout.header', function($view){
+            
             $cart = new Cart();
-            $view->with([
-                'categories' => $categories,
-                'cart' => $cart
-            ]);
+            $view->with('cart',$cart);
         });
     }
 }

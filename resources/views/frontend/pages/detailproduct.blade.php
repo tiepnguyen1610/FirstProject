@@ -25,10 +25,11 @@
 						</div>
 						<div class="col-sm-8">
 							<div class="single-item-body">
-								<p class="single-item-title"><h5><b>{{ $detail_product->name }}</b></h5></p>
+								<p class="single-item-title"><h5>{{ $detail_product->name }}</h5></p>
 								<p class="single-item-price">
+									
 									@if($detail_product->promotionprice === 0)
-										<span class="">{{ number_format($detail_product->unitprice,0,",",".").'₫' }}</span>
+										<span class=""><{{ number_format($detail_product->unitprice,0,",",".").'₫' }}</span>
 									@else
 										<span class="flash-del">{{ number_format($detail_product->unitprice,0,",",".") }}</span>
 										<span class="flash-sale">{{ number_format($detail_product->promotionprice,0,",",".").'₫' }}</span>
@@ -44,10 +45,9 @@
 							</div>
 							<div class="space20">&nbsp;</div>
 
-							<p>Số Lượng :</p>
 							<div class="single-item-options">
-								<input type="number" step="1" max="99" min="1" value="1" size="4" class="wc-select" name="color"/>
-								<a class="add-to-cart" id="addCart" href=""><i class="fa fa-shopping-cart"></i></a>
+								{{-- <input type="number" step="1" max="99" min="1" value="1" size="4" class="wc-select" name="color"/> --}}
+								<a class="add-to-cart" href="{{ route('cart.add',$detail_product->id) }}"><i class="fa fa-shopping-cart"></i></a>
 								<div class="clearfix"></div>
 							</div>
 						</div>
@@ -114,28 +114,28 @@
 						<div class="widget-body">
 							<div class="beta-sales beta-lists">
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/user/images/products/sales/1.png" alt=""></a>
+									<a class="pull-left" href="product.html"><img src="" alt=""></a>
 									<div class="media-body">
 										Sample Woman Top
 										<span class="beta-sales-price">$34.55</span>
 									</div>
 								</div>
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/user/images/products/sales/2.png" alt=""></a>
+									<a class="pull-left" href="product.html"><img src="" alt=""></a>
 									<div class="media-body">
 										Sample Woman Top
 										<span class="beta-sales-price">$34.55</span>
 									</div>
 								</div>
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/user/images/products/sales/3.png" alt=""></a>
+									<a class="pull-left" href="product.html"><img src="" alt=""></a>
 									<div class="media-body">
 										Sample Woman Top
 										<span class="beta-sales-price">$34.55</span>
 									</div>
 								</div>
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/user/images/products/sales/4.png" alt=""></a>
+									<a class="pull-left" href="product.html"><img src="" alt=""></a>
 									<div class="media-body">
 										Sample Woman Top
 										<span class="beta-sales-price">$34.55</span>
@@ -149,28 +149,28 @@
 						<div class="widget-body">
 							<div class="beta-sales beta-lists">
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/user/images/products/sales/1.png" alt=""></a>
+									<a class="pull-left" href="product.html"><img src="" alt=""></a>
 									<div class="media-body">
 										Sample Woman Top
 										<span class="beta-sales-price">$34.55</span>
 									</div>
 								</div>
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/user/images/products/sales/2.png" alt=""></a>
+									<a class="pull-left" href="product.html"><img src="" alt=""></a>
 									<div class="media-body">
 										Sample Woman Top
 										<span class="beta-sales-price">$34.55</span>
 									</div>
 								</div>
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/user/images/products/sales/3.png" alt=""></a>
+									<a class="pull-left" href="product.html"><img src="" alt=""></a>
 									<div class="media-body">
 										Sample Woman Top
 										<span class="beta-sales-price">$34.55</span>
 									</div>
 								</div>
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="public/user/images/products/sales/4.png" alt=""></a>
+									<a class="pull-left" href="product.html"><img src="" alt=""></a>
 									<div class="media-body">
 										Sample Woman Top
 										<span class="beta-sales-price">$34.55</span>
