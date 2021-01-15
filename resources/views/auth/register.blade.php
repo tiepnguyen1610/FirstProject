@@ -1,77 +1,61 @@
-@extends('layouts.app')
-
+@extends('frontend.master')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<div class="inner-header">
+    <div class="container">
+        <div class="pull-left">
+            <h6 class="inner-title">Đăng Kí Tài Khoản</h6>
+        </div>
+        <div class="pull-right">
+            <div class="beta-breadcrumb">
+                <a href="{{ route('index') }}">Trang Chủ</a> / <span>Đăng kí</span>
             </div>
         </div>
+        <div class="clearfix"></div>
     </div>
 </div>
+
+<div class="container">
+    <div id="content">
+        
+        <form action="{{ route('register') }}" method="POST" class="beta-form-checkout">
+            @csrf
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    @if(count($errors) > 0)
+                        <div class="alert alert-danger">
+                            @foreach($errors->all() as $error)
+                                {{ $error }}
+                            @endforeach
+                        </div>
+                    @endif
+                    <h4>Đăng kí</h4>
+                    <div class="space20">&nbsp;</div>
+                    
+                    <div class="form-block">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email..." required>
+                    </div>
+
+                    <div class="form-block">
+                        <label for="your_last_name">Họ & Tên*</label>
+                        <input type="text" id="your_last_name" name="fullname" placeholder="Nhập họ tên đầy đủ..." required>
+                    </div>
+                    <div class="form-block">
+                        <label for="password">Mật Khẩu*</label>
+                        <input type="password" name="password" placeholder="Nhập mật khẩu tối thiểu 6 ký tự" id="password" required>
+                    </div>
+                    <div class="form-block">
+                        <label for="repassword">Xác Nhận Mật Khẩu*</label>
+                        <input type="password" name="repassword" id="repassword" required>
+                    </div>
+                    <div class="form-block">
+                        <button type="submit" class="btn btn-primary">Đăng Ký</button>
+                    </div>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+        </form>
+    </div> <!-- #content -->
+</div> <!-- .container -->
 @endsection
