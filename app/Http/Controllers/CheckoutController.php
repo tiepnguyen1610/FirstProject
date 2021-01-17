@@ -33,7 +33,7 @@ class CheckoutController extends Controller
        $bill->id_customer = $customer->id;
        $bill->date_order = date('Y-m-d H:i:s');
        $bill->total = $cart->totalPrice;
-       $bill->payment = $request->payment;
+       $bill->payment = $request->payment_method;
        $bill->note = $request->txtNote;
        $bill->save();
 

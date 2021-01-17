@@ -27,11 +27,11 @@
 						<div class="space20">&nbsp;</div>
 						<div class="form-block">
 							<label for="name">Họ tên*</label>
-							<input type="text" name="txtFullname" id="name" value="" placeholder="Nhập họ tên đầy đủ" required>
+							<input type="text" name="txtFullname" id="name" value="{{ auth()->user()->fullname }}" placeholder="Nhập họ tên đầy đủ" required>
 						</div>
 						<div class="form-block">
 							<label for="email">Email*</label>
-							<input type="email" name="txtEmail" value="" id="email" required placeholder="expample@gmail.com">
+							<input type="email" name="txtEmail" value="{{ auth()->user()->email }}" id="email" required placeholder="expample@gmail.com">
 						</div>
 
 						<div class="form-block">
@@ -78,7 +78,7 @@
 							<div class="your-order-body">
 								<ul class="payment_methods methods">
 									<li class="payment_method_bacs">
-										<input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="COD" id="payment" name="payment" data-order_button_text="" checked>
+										<input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="COD" id="payment" data-order_button_text="" checked>
 										<label for="payment_method_bacs">Thanh toán khi nhận hàng </label>
 										<div class="payment_box payment_method_bacs" style="display: block;">
 											Cửa hàng sẽ gửi hàng đến địa chỉ của bạn, bạn xem hàng rồi thanh toán tiền cho nhân viên giao hàng
@@ -86,7 +86,7 @@
 									</li>
 
 									<li class="payment_method_cheque">
-										<input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="ATM" id="payment" name="payment" data-order_button_text="">
+										<input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="ATM" id="payment" data-order_button_text="">
 										<label for="payment_method_cheque">Chuyển khoản </label>
 										<div class="payment_box payment_method_cheque" style="display: none;">
 											Chuyển tiền đến tài khoản sau:

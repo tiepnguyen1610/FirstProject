@@ -1,3 +1,19 @@
+<style> 
+	#btn-submit {
+	    border: none;
+	    height: 100%;
+	    display: block;
+	    background: none;
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+
+	#region_logout {
+		display: block;
+		height: 100%;
+	}
+</style>
+
 <div id="header">
 		<div class="header-top">
 			<div class="container">
@@ -12,8 +28,11 @@
 
 						@if(Auth::check())
 							<li><a href=""><i class="fa fa-user"></i>{{ Auth::user()->fullname }}</a></li>
-							<li>
-								<a href="{{ Auth::logout() }}">Đăng xuất</a>
+							<li id="region_logout">
+								<form action="{{ route('logout') }}" method="POST" id="formLogout">
+									@csrf
+									<input type="submit" value="Đăng xuất" id="btn-submit">
+								</form>
 							</li>
 						@else
 							<li><a href=""><i class="fa fa-user"></i>Tài khoản</a></li>

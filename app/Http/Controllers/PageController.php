@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Slide;
 use App\Product;
 
-
 class PageController extends Controller
 {
     public function getIndex()
