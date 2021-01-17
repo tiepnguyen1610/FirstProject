@@ -1,2 +1,2 @@
 # FirstProject
-This is my first project with Laravel
+This is my first Laravel project
