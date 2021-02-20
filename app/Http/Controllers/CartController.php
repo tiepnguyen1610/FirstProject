@@ -19,6 +19,7 @@ class CartController extends Controller
     	$product = Product::findOrFail($id);
     	$cart->add($product);
     	return redirect()->back();
+        //return response()->json($cart);
     }
 
     public function delete(Cart $cart,$id)
